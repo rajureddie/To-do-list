@@ -1,38 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+
+
+}
 .App {
-  text-align: center;
-}
+  width: 100vw;
+  height: 100vh;
+ 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
+.sidebar{
+  height: 100vh;
+  width: 200px;
+  background-color: #2f4050;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebarlist{
+  height: auto;
+  width: 100%;
+  margin: 0;
+  
+}
+.sidebarlist .row{
+  width: 100%;
+  height: 50px;
+  color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0%;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+
+}
+.sidebarlist .row:hover{
+  cursor: pointer;
+  background-color: #293846;
+}
+.sidebarlist #active{
+  background-color: #293846;
+}
+.row #icon{
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+.row #title{
+  flex: 70%;
+}
+
+/* to do dash css */
+
+.div-container{
+  height: 100vh;
+  width: 100vw;
+  background-color: #293846;
+  margin: 0px;
+  padding: 0px;
+  
+}
+.div-container .div-searchbar{
+  
+  
+  width: 100%;
+  height: 20%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+  
+}
+.div-searchbar #search{
+  
+  
+  width: 30%;
+  height: 40px;
+  padding: 5px;
+  padding-left: 20px;
+  border-radius: 10px 0px 0px 10px;
+  border: none;
+  align-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0px 1px 10px #293846;
+  
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  
 }
 
-.App-link {
-  color: #61dafb;
+.div-searchbar button{
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+  border-radius: 0px 10px 10px 0px;
+  background-color: white;
+  padding-right: 2px;
+  box-shadow: 0px 1px 10px #293846;
+  
+
+}
+/* main dashboard */
+
+.div-main{
+  height: 80%;
+  width: 100%;
+}
+.div-main #title-container{
+  display: flex;
+  justify-content: center;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ .div-main .daily-task{
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0px 1px 10px black;
+  
+ }
+
+ .div-main h1{
+  
+  display: flex;
+  justify-content: center;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 2rem;
+  margin-top: 50px;
+  color: #fff;
+  font-style:initial;
+  
+ }
+.div-task-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+ }
+ .div-task-container .div-task{
+  height: 40px;
+  width: 60%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  
+
+  
+  border-radius: 5px;
+  margin: 9px;
+  box-shadow: 1px 1px 2px 1px black ;
+ }
+
+
+
+/* bottom btn */
+
+.bottom-button-container {
+  position: fixed;
+  bottom: 40px;
+  left: 90%;
+  transform: translateX(-50%);
+  z-index: 1000; 
+}
+
+.bottom-button-container button {
+  height: 50px;
+  width: 70px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.bottom-button-container button:hover {
+  background-color: #0056b3;
+}
+
+/* input pop up */
+.div-container-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.close-task-container{
+  height: 30px;
+  width: 100%;
+  
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10px;
+ 
+}
+.close-task-container #close{
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  background-color: #d41818;
+  
+  
+
+}
+
+.form-container{
+  height: 50%;
+  width: 30%;
+  background-color: #007bff;
+  padding: 10px;
+  padding-top: 10pxpx ;
+  border-radius: 10px;
+  
+
+ 
+}
+.form-container form{
+
+  
+}
+.form .input{
+  height: 40px;
+  width: 70%;
+  border-radius: 5px;
+  margin: 10px 0px 10px 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+
+}
+.form-container button{
+  height: 40px;
+  width: 15%;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: rgb(243, 161, 9);
+}
+.form-container .task-list{
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.task-list ul{
+  
+  width: 100%;
+  
+ 
+}
+
+.form-container .task-list li{
+  height: auto;
+  
+  background-color: #fff;
+  list-style-type: none;
+  margin: 5px;
+  border-radius: 5px;
+  padding-left: 10px;
+  
+
+}
+.task-list  button{
+  width: fit-content;
+  height: fit-content;
+  font-size: 0.8rem;
+  padding: 5px;
+  
+
+}
+
+/* link */
+.custom-link{
+  text-decoration: none;
+  color: inherit;
+
+}
+.custom-link:hover{
+  color: #2f4050;
+}
+
+/* mytask card */
+
+
+.mytask-container{
+  height:100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+
+}
+.mytask-card{
+  height: 250px;
+  width: 250px;
+  border: 2px solid black;
+  margin: 10px;
+
+}
+.mytask-card .card-theme{
+  height: 50px;
+  width: 100%;
+  background-color: #2f4050;
 }
